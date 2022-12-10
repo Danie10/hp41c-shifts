@@ -21,10 +21,14 @@ Having written this program back then (before anyone had personal computers at h
 * Coming off a Sinclair ZX-81 and Commodore-64 running BASIC, I'd really not yet grasped proper modulisation and error checking. So I've left it pretty well much as it was back then.
 * I did however remove the XTOA function which displayed brackets in the prompts, mainly because that would have required the Extended Functions module to be installed (which I had on my own calculator).
 * For some odd reason the Cal routine was not expanded in my handwritten notes, so I thought I was calling some extended function that came with another module. But I could find no trace of such a function. Whilst I could have just used the DDAYS function (HP41CX has it built in) to work out the difference between the two dates, that would also have meant the Time Module needed to be installed. So to keep it basic HP41C compatible, I decided to make the Cal routine just calculate the Julian Day from the date instead. You can try that out by typing a mm.ddyyyy date into the X register (display), and then 'XEQ Cal' and you'll see it returns the correct Julian Day as an integer.
+[![Rought Notes](assets/HP41CV_Shifts_rough_working.pdf)]
 
 # The HP41CV
 Yes still my absolute pride and joy, just no longer in daily use. Not only did it get me my IT job, but it set me on a path too that led me to be able to retire early. Hewlett-Packard made extremely well engineered calculators that in the early years of space travel, used to accompany astronauts as a manual backup system to assist them with manual landings of the space craft.
 
+[![HP41C on Space Shuttle](assets/SpaceShuttle.jpg)]
+
 Mine still works 100% after 40 years. You can also see a video of me powering my HP41CV up, from cold witha  new set of batteries, when it was 30 years old.
+
 [![Powering up the HP41VC after 30 years](https://img.youtube.com/vi/wjCbcsCS_3k/0.jpg)](https://www.youtube.com/watch?v=wjCbcsCS_3k)
 
