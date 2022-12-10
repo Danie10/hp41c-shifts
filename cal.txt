@@ -1,0 +1,45 @@
+# Called from Shifts application
+# This function now only calculates and returns the Julian Day from date given at prompt
+# Time module DDAYS calculates days between dates in X and Y registers
+# Julian Days delta - https://www.hpmuseum.org/software/67pacs/67calend.htm
+# Julian days - https://literature.hpcalc.org/community/hp41-ul-calendars-en.pdf Page 4
+01 LBL "CAL"
+02 INT # Gets integer portion of date
+03 STO 00 # Saves to register 00
+04 LASTX # Restore whole date entry to X again
+05 FRC # Now get fractional portion
+06 1 ᴇ2 # Moves part of it across to integer range, enter 1ᴇEX 02
+07 ×
+08 INT
+09 STO 01 # Saves to register 01
+10 LASTX
+11 FRC
+12 1 ᴇ4 # Moves other part across to integer range, enter 1ᴇEX 04
+13 ×
+14 STO 02 # Save to register 02
+15 2
+16 RCL 00
+17 X>Y?
+18 GTO 00
+19 1
+20 ST- 02
+21 12
+22 ST+ 00
+23 LBL 00
+24 1
+25 ST+ 00
+26 RCL 02
+27 365.25
+28 ×
+29 INT
+30 30.6001
+31 RCL 00
+32 ×
+33 INT
+34 +
+35 RCL 01
+36 +
+37 1720982
+38 +
+39 RTN # Julian Day number in X register
+40 .END.

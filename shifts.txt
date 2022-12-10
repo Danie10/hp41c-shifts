@@ -1,0 +1,67 @@
+# Program written in late 1980's on a HP-41CV programmable calculator
+# It was created to help shift workers see what shift they'd be working on a future date
+# Written specifically for 6 working shifts and 3 rest days, over 8 calendar cycle days
+# App prompts for today's date, Future date, today's Shift no. Outputs Shift no for future date
+# Anything in inverted commas needs the ALPHA button to enter characters
+# XTOA command requires XFUNCTIONS module
+01 LBL "SHIFTS"
+02 "TODAY'S DATE?"  # MM.DDYYYY format, and press R/S button
+03 PROMPT
+04 XEQ "CAL"
+05 STO 10 # Save Day 1 value
+06 "NEXT DATE?"     # MM.DDYYYY format, and press RT/S button
+07 PROMPT
+08 XEQ "CAL"
+09 RCL 10 # Has 2nd Day on stack, recalls Day 1 now
+10 - # Calculates difference in days
+11 8 # Uses the MOD of 8 (shifts cycle) to get diff in shifts from today's shift
+12 MOD
+13 STO 10 # Saves MOD remainder value (difference in shifts) in register 10
+14 "SHIFT? 0-7"     # SHIFT DAYS: 0=Aft1, 1=Aft2, 2=Mrn1, 3=Double (Mrn2+Nght1) 4=Nght2, 5=Rst1, 6=Rst2, 7=Rst3, and press RT/S button
+15 PROMPT # Prompt for shift no
+16 RCL 10
+17 +
+18 7
+19 X<>Y # Exchange X and Y registers
+20 X>Y? # Checks if shifts is greater than 7 then error
+21 XEQ 08
+22 GTO IND "X"      # Otherwise now jump to label to display shift on that 2nd date
+23 LBL 00
+24 "AFT-1"
+25 AVIEW
+26 STOP
+27 LBL 01
+28 "AFT-2"
+29 AVIEW
+30 STOP
+31 LBL 02
+32 "MRN-1"
+33 AVIEW
+34 STOP
+35 LBL 03
+36 "DOUBLE"
+37 AVIEW
+38 STOP
+39 LBL 04
+40 "NGHT-2"
+41 AVIEW
+42 STOP
+43 LBL 05
+44 "RST-1"
+45 AVIEW
+46 STOP
+47 LBL 06
+48 "RST-2"
+49 AVIEW
+50 STOP
+51 LBL 07
+52 "RST-3"
+53 AVIEW
+54 STOP
+55 LBL 08 # Checks that no of shifts does not exceed 7
+56 X<>Y
+57 -
+58 1
+59 -
+60 RTN
+61 .END.
