@@ -15,7 +15,7 @@ Having written this program back then (before anyone had personal computers at h
 * Prompt for today's shift number 0-7.
 ** Shifts are numbered 0=Aft-1, 1=Aft-2, 2=Mrn-1, 3=Double(Mrn-2+Nght-1), 4=Nght-2, 5=Rst-1, 6=Rst-2, 7=Rst-3
 * Adds delta days to shift number to get future shift, and displays shift my name.
-[![Short Video](https://img.youtube.com/vi/MtlUrAmhWzI/0.jpg)](https://www.youtube.com/watch?v=MtlUrAmhWzI)
+[![Video Demo](https://img.youtube.com/vi/0VoFcVH7Hr0/0.jpg)](https://youtu.be/0VoFcVH7Hr0)
 
 # Comment
 * Coming off a Sinclair ZX-81 and Commodore-64 running BASIC, I'd really not yet grasped proper modulisation and error checking. So I've left it pretty well much as it was back then.
